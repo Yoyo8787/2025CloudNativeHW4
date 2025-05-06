@@ -1,5 +1,5 @@
 # 使用官方 Node.js 映像檔（LTS 版）
-FROM node:lts
+FROM node:lts-slim
 
 # 設定工作目錄
 WORKDIR /app
