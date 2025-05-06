@@ -5,7 +5,8 @@ FROM node:lts-slim
 WORKDIR /app
 
 # 複製 app.js 到容器中
-COPY app.js .
+# 註解調製造錯誤
+# COPY app.js .
 
 # 預設執行 app.js
 CMD ["node", "app.js"]
