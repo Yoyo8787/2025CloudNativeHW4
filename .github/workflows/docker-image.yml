@@ -4,6 +4,9 @@ on:
     push:
         branches:
             - main # 當 main 分支有 push 時自動執行
+    pull_request:
+        branches:
+            - main # 當 main 分支有 pull request 時自動執行
 
 jobs:
     build-and-push:
