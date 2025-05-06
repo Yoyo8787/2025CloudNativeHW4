@@ -1,24 +1,23 @@
 name: Build and Push Docker Image
 
 on:
-  push:
-    branches:
-      - main  # 當 main 分支有 push 時自動執行
+    push:
+        branches:
+            - main # 當 main 分支有 push 時自動執行
 
 jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
+    build-and-push:
+        runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v4
+        steps:
+            - name: Checkout source code
+              uses: actions/checkout@v4
 
-      - name: Log in to Docker registry
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+            - name: Log in to Docker registry
+              run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Build Docker image
-        run: docker build -t 2025cloud/hello-world-js:latest .
+            - name: Build Docker image
+              run: docker build -t yoyo8787/2025cloud/hello-world-js:latest .
 
-      - name: Push Docker image
-        run: docker push 2025cloud/hello-world-js:latest
-
+            - name: Push Docker image
+              run: docker push yoyo8787/2025cloud/hello-world-js:latest
